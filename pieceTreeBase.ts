@@ -674,7 +674,7 @@ export class PieceTreeBase {
 
 		let m: RegExpExecArray | null;
 		let counter = 0;
-		let cursorNumber = 16;
+		let instanceCount = 5;
 		// Reset regex to search from the beginning
 		const ret: BufferCursor = { line: 0, column: 0 };
 		let searchText: string;
@@ -705,7 +705,7 @@ export class PieceTreeBase {
 				if (offsetInBuffer(m.index) + m[0].length >= end) {
 					return resultLen;
 				}
-				if (counter < (cursorNumber - (limitResultCount / 2))) {
+				if (counter < (instanceCount - (limitResultCount / 2))) {
 					counter++;
 					continue;
 				}
